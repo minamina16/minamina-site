@@ -59,9 +59,10 @@ collections:
             name: feature
             widget: object
             fields:
-              - { label: "帯バナーを表示する", name: enabled, widget: boolean, default: true }
-              - { label: "ラベル（例 今月のキャンペーン）", name: pop, widget: string }
-              - { label: "ひとこと（例 クラプロックス トラベルセット特集）", name: title, widget: string }
+              - { label: "表示する（オフにすると帯・特集・メニューが全て消えます）", name: enabled, widget: boolean, default: true }
+              - { label: "ラベル（例 キャンペーン情報）", name: pop, widget: string }
+              - { label: "キャンペーン名（例 クラプロックス トラベルセット特集）", name: title, widget: string }
+              - { label: "期間（例 期間：2026.6.1 〜 6.30）", name: period, widget: string, required: false }
               - { label: "コメント（特集ブロックの見出し下の1行・任意）", name: lead, widget: text, required: false }
               - { label: "サムネイル写真（小さく表示／任意）", name: image, widget: image, required: false }
               - { label: "リンクの文字（例 くわしく見る →）", name: button_label, widget: string }

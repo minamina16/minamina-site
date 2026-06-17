@@ -271,6 +271,7 @@
 
   /* FEATURE BLOCK（特集ブロック：選んだ商品の上品な再掲） */
   .fblock{background:var(--peach-light)}
+  .fblock .fb-period{display:inline-block;font-size:.82rem;color:var(--accent-deep);background:#FBE7D3;padding:5px 14px;border-radius:999px;margin-top:4px}
   .fblock .fb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px;max-width:840px;margin-left:auto;margin-right:auto}
   .fb-card{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;transition:transform .15s ease,box-shadow .2s ease}
   .fb-card:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(108,128,52,.10)}
@@ -387,6 +388,16 @@
     .cal td{padding:2px}
     .cal .day{height:38px;font-size:.8rem}
   }
+
+  /* 準備中ポップアップ */
+  .soon-modal{position:fixed;inset:0;z-index:210;display:flex;align-items:center;justify-content:center;padding:24px}
+  .soon-modal[hidden]{display:none}
+  .soon-bg{position:absolute;inset:0;background:rgba(44,44,34,.5)}
+  .soon-card{position:relative;background:#fff;border-radius:22px;max-width:380px;width:100%;padding:34px 30px 30px;text-align:center;box-shadow:0 24px 60px rgba(44,44,34,.28)}
+  .soon-card .soon-ic{font-size:2rem;margin-bottom:8px}
+  .soon-card h3{font-size:1.2rem;color:var(--ink);margin:0 0 10px}
+  .soon-card p{font-size:.9rem;color:var(--ink-soft);line-height:1.7;margin:0}
+  .soon-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.4rem;color:var(--muted);cursor:pointer;line-height:1}
 </style>
 </head>
 <body>
@@ -395,7 +406,7 @@
   <div class="topbar"><div class="wrap">ミナミナ ／ 羽村市のセレクトショップ ／　とっておきの商品を、ちょうどいい価格で。</div></div>
   <div class="wrap">
     <nav class="nav">
-      <a href="#hero" class="brand">
+      <a href="#" class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
         <img class="brand-clover" src="logo-clover.png" alt="">
         <img class="brand-logo" src="logo-wordmark.png" alt="minamina ミナミナ">
       </a>
@@ -411,6 +422,7 @@
           <span class="nav-top">アイテム ▾</span>
           <div class="dropdown">
             <a href="#services">取り扱いジャンル</a>
+            <a href="#feature-block" id="nav-campaign">キャンペーン情報</a>
             <a href="#products">バイヤーのイチ推し</a>
           </div>
         </div>
@@ -418,7 +430,7 @@
           <span class="nav-top">セルフケア ▾</span>
           <div class="dropdown">
             <a href="#reserve">セルフエステ</a>
-            <a href="#reserve">セルフ脱毛（予定）</a>
+            <a href="#" onclick="showSoon();return false;">セルフ脱毛</a>
           </div>
         </div>
         <div class="nav-item">
@@ -455,7 +467,7 @@
   <div class="wrap">
     <div class="fbar-inner">
       <img class="thumb" id="f-img" src="images/travelset-pinkgrapefruit.png" alt="">
-      <span class="pop" id="f-pop">今月のキャンペーン</span>
+      <span class="pop" id="f-pop">キャンペーン情報</span>
       <span class="txt" id="f-title">クラプロックス トラベルセット特集</span>
       <span class="more" id="f-btn">くわしく見る →</span>
     </div>
@@ -573,8 +585,9 @@
 <section class="fblock" id="feature-block">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow" id="fb-pop">今月のキャンペーン</span>
+      <span class="eyebrow" id="fb-pop">キャンペーン情報</span>
       <h2 class="sec-title" id="fb-title">クラプロックス トラベルセット特集</h2>
+      <div class="fb-period" id="fb-period">期間：2026.6.1 〜 6.30（なくなり次第終了）</div>
       <p class="lead" id="fb-lead">旅行やお出かけにちょうどいい、人気のトラベルセット。気になる香りを店頭で選んでください。</p>
     </div>
     <div class="fb-grid" id="fb-grid">
@@ -766,15 +779,19 @@
           }
         }
         var block=document.getElementById('feature-block');
+        var navc=document.getElementById('nav-campaign');
         if(block){
           if(on && featured.length){
             block.hidden=false;
+            if(navc) navc.hidden=false;
             if(f.pop!=null && f.pop!=='') document.getElementById('fb-pop').textContent=f.pop;
             if(f.title!=null && f.title!=='') document.getElementById('fb-title').textContent=f.title;
+            var fbp=document.getElementById('fb-period');
+            if(f.period!=null && f.period!==''){ fbp.textContent=f.period; fbp.hidden=false; } else { fbp.hidden=true; }
             var fbl=document.getElementById('fb-lead');
             if(f.lead!=null && f.lead!==''){ fbl.innerHTML=esc(f.lead).replace(/\n/g,'<br>'); fbl.hidden=false; } else { fbl.hidden=true; }
             document.getElementById('fb-grid').innerHTML = featured.map(renderMini).join('');
-          } else { block.hidden=true; }
+          } else { block.hidden=true; if(navc) navc.hidden=true; }
         }
       }
       if(Array.isArray(data.products)){
@@ -833,6 +850,23 @@
     <div id="nm-body" class="nm-body"></div>
   </div>
 </div>
+
+<!-- 準備中ポップアップ（セルフ脱毛など） -->
+<div id="soon-modal" class="soon-modal" hidden>
+  <div class="soon-bg" data-close-soon></div>
+  <div class="soon-card">
+    <button class="soon-close" data-close-soon aria-label="閉じる">×</button>
+    <div class="soon-ic">🌿</div>
+    <h3>セルフ脱毛は準備中です</h3>
+    <p>ただいま開始に向けて準備を進めています。スタートまで、もう少しお待ちください。最新情報はインスタグラムやおしらせでご案内します。</p>
+  </div>
+</div>
+<script>
+  function showSoon(){ var m=document.getElementById('soon-modal'); if(m){ m.hidden=false; document.body.style.overflow='hidden'; } }
+  function closeSoon(){ var m=document.getElementById('soon-modal'); if(m){ m.hidden=true; document.body.style.overflow=''; } }
+  document.addEventListener('click', function(e){ if(e.target.closest && e.target.closest('[data-close-soon]')) closeSoon(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSoon(); });
+</script>
 
 </body>
 </html>
