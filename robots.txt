@@ -1,0 +1,5 @@
+# 公開準備中：検索エンジンの巡回を全面ブロック中。
+# 本公開のときに「Allow: /」へ戻し、Sitemap行を有効化してください。
+User-agent: *
+Disallow: /
+# Sitemap: https://example.netlify.app/sitemap.xml
