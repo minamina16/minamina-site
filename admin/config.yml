@@ -43,29 +43,65 @@ collections:
             widget: list
             summary: "{{fields.date}}　{{fields.text}}"
             fields:
-              - { label: "日付（例 2026.05.12）", name: date, widget: string }
-              - { label: "タグ表示名", name: tag, widget: string }
+              - { label: "サイトに表示する（オフにすると隠せます／削除はしません）", name: visible, widget: boolean, default: true }
+              - { label: "日付（カレンダーから選択）", name: date, widget: datetime, date_format: "YYYY.MM.DD", time_format: false, format: "YYYY.MM.DD" }
+              - label: "タグ表示名（選んでください）"
+                name: tag
+                widget: select
+                options:
+                  - "おしらせ"
+                  - "新商品"
+                  - "イベント"
+                  - "セール"
+                  - "重要"
               - label: "タグの色"
                 name: tag_type
                 widget: select
                 options:
-                  - { label: "おしらせ（ピンク）", value: "info" }
-                  - { label: "新商品（黄）", value: "new" }
-                  - { label: "イベント（青）", value: "event" }
+                  - { label: "ピンク（おしらせ向き）", value: "info" }
+                  - { label: "黄（新商品向き）", value: "new" }
+                  - { label: "青（イベント向き）", value: "event" }
               - { label: "見出し（一覧に表示）", name: text, widget: string }
               - { label: "本文（クリックで開く詳細・任意）", name: body, widget: text, required: false }
               - { label: "写真（任意）", name: image, widget: image, required: false }
+          - label: "特集の帯バナー（ヘッダー下に表示）"
+            name: feature
+            widget: object
+            fields:
+              - { label: "表示する（オフにすると帯・特集・メニューが全て消えます）", name: enabled, widget: boolean, default: true }
+              - { label: "ラベル（例 キャンペーン情報）", name: pop, widget: string }
+              - { label: "キャンペーン名（例 クラプロックス トラベルセット特集）", name: title, widget: string }
+              - { label: "期間（例 期間：2026.6.1 〜 6.30）", name: period, widget: string, required: false }
+              - { label: "コメント（特集ブロックの見出し下の1行・任意）", name: lead, widget: text, required: false }
+              - { label: "サムネイル写真（小さく表示／任意）", name: image, widget: image, required: false }
+              - { label: "リンクの文字（例 くわしく見る →）", name: button_label, widget: string }
+              - { label: "リンク先（特集ブロックは #feature-block）", name: button_link, widget: string }
           - label: "おすすめ商品"
             name: products
             widget: list
-            summary: "{{fields.no}}　{{fields.name}}"
+            summary: "{{fields.name}}（{{fields.detail}}）"
             fields:
-              - { label: "番号（画像内に表示）", name: no, widget: string }
-              - { label: "バッジ（新着/人気/セール 等・不要なら空欄）", name: badge, widget: string, required: false }
-              - { label: "カテゴリ", name: category, widget: string }
+              - { label: "サイトに表示する（オフにすると一覧から隠せます／削除はしません）", name: visible, widget: boolean, default: true }
+              - { label: "バッジ（自由入力／例 キャンペーン・新着・残りわずか・母の日特別 など。不要なら空欄）", name: badge, widget: string, required: false }
+              - label: "カテゴリ（選んでください）"
+                name: category
+                widget: select
+                options:
+                  - "歯のケア"
+                  - "オーラルケア"
+                  - "美容ケア"
+                  - "ボディケア"
+                  - "ヘアケア"
+                  - "UVケア"
+                  - "その他"
               - { label: "商品名", name: name, widget: string }
               - { label: "詳細・味・容量など（任意）", name: detail, widget: string, required: false }
-              - { label: "価格（例 ¥1,980）", name: price, widget: string }
+              - { label: "商品説明（みじかい紹介・任意／空ならカードに出ません）", name: description, widget: text, required: false }
+              - { label: "価格（数字だけ入力／例 1980 → ¥1,980 と表示）", name: price, widget: string }
+              - { label: "旧価格（セール時の打ち消し線・数字だけ・任意）", name: oldprice, widget: string, required: false }
+              - { label: "写真（任意）", name: image, widget: image, required: false }
+              - { label: "売り切れ表示", name: soldout, widget: boolean, default: false, required: false }
+              - { label: "特集ブロックに表示する", name: featured, widget: boolean, default: false, required: false }
           - label: "インスタグラム"
             name: instagram
             widget: object
