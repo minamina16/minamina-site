@@ -14,11 +14,11 @@
   },
   "news": [
     {
-      "date": "2026.05.12",
+      "date": "2026.06.18",
       "tag": "おしらせ",
       "tag_type": "info",
-      "text": "セルフエステ予約システムをリニューアルしました（サンプル）",
-      "body": "セルフエステのご予約が、Googleカレンダーから24時間いつでもお取りいただけるようになりました。空きがあれば、2時間前までの当日予約も可能です。\nご予約はこちら → https://calendar.app.google/mZWrHSxfYKENfCyk8\n（これはサンプルのお知らせ本文です。写真とリンクの表示例です）",
+      "text": "ミナミナHPオープン！",
+      "body": "minaminaのホームページがオープンしました！\nお得なキャンペーン情報や商品情報など随時更新いたします。\nどうぞよろしくお願いします。",
       "image": "tenpo.jpg"
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "no": "3",
-      "badge": "キャンペーン",
+      "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
       "detail": "オレンジ",
@@ -96,7 +96,7 @@
     },
     {
       "no": "4",
-      "badge": "キャンペーン",
+      "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
       "detail": "ウォーターメロン",
@@ -108,7 +108,7 @@
     },
     {
       "no": "5",
-      "badge": "キャンペーン",
+      "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
       "detail": "アップル＋アロエ",
@@ -119,7 +119,7 @@
     },
     {
       "no": "6",
-      "badge": "キャンペーン",
+      "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
       "detail": "ピーチ＋アプリコット",
@@ -130,7 +130,7 @@
     },
     {
       "no": "7",
-      "badge": "キャンペー",
+      "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
       "detail": "ブルーベリー＋リコリス",
@@ -139,18 +139,6 @@
       "image": "images/travelset-blueberry.png",
       "soldout": true,
       "featured": true
-    },
-    {
-      "no": "８",
-      "badge": "残りわずか",
-      "category": "美容のケア",
-      "name": "[bao.] 高濃度 炭酸泡洗顔",
-      "detail": "きめ細かな高濃度の炭酸泡が毛穴の凹凸に密着して洗い流す",
-      "price": "880",
-      "oldprice": "",
-      "image": "/images/[bao.] 高濃度 炭酸泡洗顔.png",
-      "soldout": false,
-      "featured": false
     }
   ],
   "instagram": {
