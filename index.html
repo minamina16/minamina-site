@@ -240,7 +240,7 @@
 
   /* PRODUCTS */
   .products{background:var(--cream)}
-  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start}
   .prod{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;transition:transform .15s ease,box-shadow .2s ease}
   .prod:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(108,128,52,.12)}
   .prod .ph{position:relative;aspect-ratio:1;border-radius:14px;background:linear-gradient(150deg,var(--peach-light),var(--peach));display:grid;place-items:center;font-size:2.4rem;font-weight:800;color:var(--coral);margin-bottom:14px;overflow:hidden}
@@ -254,6 +254,7 @@
   .prod .cat{font-size:.72rem;color:var(--coral);font-weight:700;margin-bottom:3px}
   .prod .pname{font-size:.92rem;margin-bottom:4px;font-weight:600}
   .prod .pdetail{font-size:.74rem;color:var(--muted);margin-bottom:8px;line-height:1.45}
+  .prod .pdesc{font-size:.78rem;color:var(--ink-soft);margin-bottom:8px;line-height:1.6}
   .prod .price{font-size:1.05rem;font-weight:800;color:var(--coral)}
   .prod .price small{font-size:.7rem;color:var(--muted);font-weight:500}
   .prod-foot{text-align:center;margin-top:46px}
@@ -264,7 +265,7 @@
   .fbar[hidden]{display:none}
   .fbar:hover{background:#E3EFBE}
   .fbar .fbar-inner{display:flex;align-items:center;gap:13px;padding:11px 0}
-  .fbar .thumb{width:38px;height:38px;border-radius:9px;object-fit:cover;flex:0 0 auto;background:#fff;border:1px solid var(--line)}
+  .fbar .thumb{width:40px;height:40px;object-fit:contain;flex:0 0 auto;background:transparent}
   .fbar .pop{flex:0 0 auto;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;padding:4px 11px;border-radius:999px;white-space:nowrap}
   .fbar .txt{flex:0 1 auto;font-size:.88rem;color:var(--ink);font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .fbar .more{flex:0 0 auto;font-size:.8rem;color:var(--accent-deep);font-weight:700;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
@@ -607,20 +608,20 @@
     <div class="sec-head">
       <span class="eyebrow">おすすめ商品</span>
       <h2 class="sec-title">バイヤーのイチ推し</h2>
-      <p class="lead">「これは間違いない」と自信を持っておすすめする、定番のアイテムたち。</p>
+      <p class="lead">「これは間違いない」と自信を持っておすすめする、定番のアイテムを一部ご紹介します。</p>
     </div>
     <div class="prod-grid" id="prod-grid">
       <div class="prod"><div class="ph"><span class="badge">キャンペーン</span><img src="images/vx-remake-cream.png" alt="VXリメイククリーム"></div><div class="cat">美容ケア</div><div class="pname">VXリメイククリーム</div><div class="pdetail">500g ／ オープンキャンペーン価格</div><div class="price"><span class="oldprice">¥16,500</span> ¥9,990 <small>(税込)</small></div></div>
-      <div class="prod"><div class="ph"><span class="badge">新着</span><img src="images/travelset-pinkgrapefruit.png" alt="クラプロックス トラベルセット ピンクグレープフルーツ"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">ピンクグレープフルーツ＋ベルガモット</div><div class="price">¥2,300 <small>(税込)</small></div></div>
+      <div class="prod"><div class="ph"><span class="badge">キャンペーン</span><img src="images/travelset-pinkgrapefruit.png" alt="クラプロックス トラベルセット ピンクグレープフルーツ"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">ピンクグレープフルーツ＋ベルガモット</div><div class="price">¥2,300 <small>(税込)</small></div></div>
       <div class="prod soldout"><div class="ph"><span class="badge badge-sold">SOLD OUT</span><img src="images/travelset-orange.png" alt="クラプロックス トラベルセット オレンジ"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">オレンジ</div><div class="price">¥2,300 <small>(税込)</small></div></div>
       <div class="prod soldout"><div class="ph"><span class="badge badge-sold">SOLD OUT</span><img src="images/travelset-watermelon.png" alt="クラプロックス トラベルセット ウォーターメロン"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">ウォーターメロン</div><div class="price">¥2,300 <small>(税込)</small></div></div>
-      <div class="prod"><div class="ph"><img src="images/travelset-apple.png" alt="クラプロックス トラベルセット アップル＋アロエ"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">アップル＋アロエ</div><div class="price">¥2,300 <small>(税込)</small></div></div>
-      <div class="prod"><div class="ph"><img src="images/travelset-peach.png" alt="クラプロックス トラベルセット ピーチ＋アプリコット"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">ピーチ＋アプリコット</div><div class="price">¥2,300 <small>(税込)</small></div></div>
+      <div class="prod"><div class="ph"><span class="badge">キャンペーン</span><img src="images/travelset-apple.png" alt="クラプロックス トラベルセット アップル＋アロエ"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">アップル＋アロエ</div><div class="price">¥2,300 <small>(税込)</small></div></div>
+      <div class="prod"><div class="ph"><span class="badge">キャンペーン</span><img src="images/travelset-peach.png" alt="クラプロックス トラベルセット ピーチ＋アプリコット"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">ピーチ＋アプリコット</div><div class="price">¥2,300 <small>(税込)</small></div></div>
       <div class="prod soldout"><div class="ph"><span class="badge badge-sold">SOLD OUT</span><img src="images/travelset-blueberry.png" alt="クラプロックス トラベルセット ブルーベリー＋リコリス"></div><div class="cat">歯のケア</div><div class="pname">クラプロックス トラベルセット</div><div class="pdetail">ブルーベリー＋リコリス</div><div class="price">¥2,300 <small>(税込)</small></div></div>
     </div>
     <div class="prod-foot">
-      <div class="note">※ お支払いは現金・クレジットカード・PayPayがご利用いただけます。</div>
-      <a href="#contact" class="btn btn-ghost">商品の詳細をお問合せ →</a>
+      <div class="note">※ ここに掲載しているのは取り扱い商品の一部です。最新の品揃えは店頭でご覧ください。<br>※ 当店は店頭販売のみです。オンラインでの販売・発送は行っておりません。<br>※ お支払いは現金・クレジットカード・PayPayがご利用いただけます。</div>
+      <a href="#contact" class="btn btn-ghost">在庫・お取り置きをお問合せ →</a>
     </div>
   </div>
 </section>
@@ -643,10 +644,7 @@
       <span class="eyebrow">インスタグラム</span>
       <h3 data-cms="instagram.handle">@minamina_beauty_hamura</h3>
       <p data-cms="instagram.text">最新の入荷情報や、スタッフのおすすめを発信しています。</p>
-      <div class="insta-grid">
-        <div class="insta-cell">ミ</div><div class="insta-cell">ナ</div><div class="insta-cell">ミ</div><div class="insta-cell">ナ</div><div class="insta-cell">📷</div><div class="insta-cell">💫</div>
-      </div>
-      <a href="https://www.instagram.com/minamina_beauty_hamura/" id="insta-link" class="btn btn-ghost">インスタグラムをフォロー →</a>
+      <a href="https://www.instagram.com/minamina_beauty_hamura/" id="insta-link" target="_blank" rel="noopener" class="btn btn-primary">📷 インスタグラムをフォロー →</a>
     </div>
   </div>
 </section>
@@ -703,16 +701,17 @@
           <div class="hrs" data-cms="contact.tel_hours">受付：平日 10:00-19:00 ／ 土曜 10:00-17:00 ／ 日祝休</div>
         </div>
       </div>
-      <div class="form-card">
+      <form class="form-card" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?sent=1">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label>この欄は記入しないでください <input name="bot-field"></label></p>
         <div class="fh">📝 お問合せフォーム</div>
-        <div class="fnote">（実装時はGoogleフォームに置き換え）</div>
-        <div class="field"><label>お問合せの種類 <span class="req">※</span></label><select><option>商品について</option><option>セルフエステについて</option><option>その他</option></select></div>
-        <div class="field"><label>お名前 <span class="req">※</span></label><input type="text"></div>
-        <div class="field"><label>メールアドレス <span class="req">※</span></label><input type="email"></div>
-        <div class="field"><label>お電話番号</label><input type="tel"></div>
-        <div class="field"><label>お問合せ内容 <span class="req">※</span></label><textarea></textarea></div>
-        <button class="btn btn-primary" onclick="alert('これはデザインプレビューです。実装時はGoogleフォームに接続します。')">送信する</button>
-      </div>
+        <div class="field"><label>お問合せの種類 <span class="req">※</span></label><select name="お問合せの種類" required><option>商品について</option><option>セルフエステについて</option><option>その他</option></select></div>
+        <div class="field"><label>お名前 <span class="req">※</span></label><input type="text" name="お名前" required></div>
+        <div class="field"><label>メールアドレス <span class="req">※</span></label><input type="email" name="メールアドレス" required></div>
+        <div class="field"><label>お電話番号</label><input type="tel" name="お電話番号"></div>
+        <div class="field"><label>お問合せ内容 <span class="req">※</span></label><textarea name="お問合せ内容" required></textarea></div>
+        <button type="submit" class="btn btn-primary">送信する</button>
+      </form>
     </div>
   </div>
 </section>
@@ -731,23 +730,25 @@
   function get(obj, path){ return path.split('.').reduce(function(o,k){ return (o||{})[k]; }, obj); }
   function tagClass(t){ return t==='new' ? 'nt-new' : t==='event' ? 'nt-event' : 'nt-info'; }
   function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function renderProd(p){
+  function yen(v){ if(v==null||String(v).trim()==='') return ''; var n=Number(String(v).replace(/[^0-9.]/g,'')); return (isNaN(n)||n===0) ? esc(v) : '¥'+n.toLocaleString('ja-JP'); }
+  function renderProd(p, num){
     var soldout = !!p.soldout;
     var badge = soldout ? '<span class="badge badge-sold">SOLD OUT</span>' : (p.badge ? '<span class="badge">'+esc(p.badge)+'</span>' : '');
-    var ph = p.image ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'">' : esc(p.no);
+    var ph = p.image ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'">' : esc(num);
     return '<div class="prod'+(soldout?' soldout':'')+'"><div class="ph">'+badge+ph+'</div>'+
            '<div class="cat">'+esc(p.category)+'</div>'+
            '<div class="pname">'+esc(p.name)+'</div>'+
            (p.detail ? '<div class="pdetail">'+esc(p.detail)+'</div>' : '')+
-           '<div class="price">'+(p.oldprice ? '<span class="oldprice">'+esc(p.oldprice)+'</span> ' : '')+esc(p.price)+' <small>(税込)</small></div></div>';
+           (p.description ? '<div class="pdesc">'+esc(p.description).replace(/\n/g,'<br>')+'</div>' : '')+
+           '<div class="price">'+(p.oldprice ? '<span class="oldprice">'+yen(p.oldprice)+'</span> ' : '')+yen(p.price)+' <small>(税込)</small></div></div>';
   }
   function renderMini(p){
     var soldout = !!p.soldout;
-    var ph = p.image ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'">' : esc(p.no||'');
+    var ph = p.image ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'">' : '';
     return '<div class="fb-card'+(soldout?' soldout':'')+'"><div class="ph">'+ph+'</div>'+
            '<div class="info"><div class="nm">'+esc(p.name)+(soldout?'<span class="sold">SOLD OUT</span>':'')+'</div>'+
            (p.detail ? '<div class="dt">'+esc(p.detail)+'</div>' : '')+
-           '<div class="pr">'+(p.oldprice ? '<span class="oldprice">'+esc(p.oldprice)+'</span> ' : '')+esc(p.price)+' <small>(税込)</small></div></div></div>';
+           '<div class="pr">'+(p.oldprice ? '<span class="oldprice">'+yen(p.oldprice)+'</span> ' : '')+yen(p.price)+' <small>(税込)</small></div></div></div>';
   }
 
   fetch('data/site.json', {cache:'no-store'})
@@ -762,7 +763,8 @@
         var il = document.getElementById('insta-link');
         if(il) il.href = data.instagram.url;
       }
-      var featured = Array.isArray(data.products) ? data.products.filter(function(p){ return !!p.featured; }) : [];
+      var visibleProducts = Array.isArray(data.products) ? data.products.filter(function(p){ return p.visible !== false; }) : [];
+      var featured = visibleProducts.filter(function(p){ return !!p.featured; });
       if(data.feature){
         var f=data.feature, bar=document.getElementById('f-banner');
         var on = f.enabled!==false;
@@ -795,10 +797,10 @@
         }
       }
       if(Array.isArray(data.products)){
-        document.getElementById('prod-grid').innerHTML = data.products.map(renderProd).join('');
+        document.getElementById('prod-grid').innerHTML = visibleProducts.map(function(p,i){ return renderProd(p, i+1); }).join('');
       }
       if(Array.isArray(data.news)){
-        document.getElementById('news-list').innerHTML = data.news.map(function(n){
+        document.getElementById('news-list').innerHTML = data.news.filter(function(n){ return n.visible !== false; }).map(function(n){
           return '<div class="news-row"><span class="date">'+esc(n.date)+'</span>'+
                  '<span class="ntag '+tagClass(n.tag_type)+'">'+esc(n.tag)+'</span>'+
                  '<span class="ntext">'+esc(n.text)+'</span><span class="nm-arrow">→</span>'+
@@ -862,6 +864,7 @@
   </div>
 </div>
 <script>
+  if(location.search.indexOf('sent=1')>-1){ setTimeout(function(){ alert('お問合せありがとうございます。内容を確認のうえ、ご連絡いたします。'); }, 300); }
   function showSoon(){ var m=document.getElementById('soon-modal'); if(m){ m.hidden=false; document.body.style.overflow='hidden'; } }
   function closeSoon(){ var m=document.getElementById('soon-modal'); if(m){ m.hidden=true; document.body.style.overflow=''; } }
   document.addEventListener('click', function(e){ if(e.target.closest && e.target.closest('[data-close-soon]')) closeSoon(); });
