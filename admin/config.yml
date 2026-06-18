@@ -48,15 +48,18 @@ collections:
               - label: "タグ表示名（選んでください）"
                 name: tag
                 widget: select
+                required: false
                 options:
                   - "おしらせ"
                   - "新商品"
                   - "イベント"
+                  - "キャンペーン"
                   - "セール"
                   - "重要"
               - label: "タグの色"
                 name: tag_type
                 widget: select
+                required: false
                 options:
                   - { label: "ピンク（おしらせ向き）", value: "info" }
                   - { label: "黄（新商品向き）", value: "new" }
@@ -86,6 +89,7 @@ collections:
               - label: "カテゴリ（選んでください）"
                 name: category
                 widget: select
+                required: false
                 options:
                   - "歯のケア"
                   - "オーラルケア"
