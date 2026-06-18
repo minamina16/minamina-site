@@ -2,7 +2,7 @@
 # ★公開時に repo を「あなたのGitHubユーザー名/リポジトリ名」へ差し替えてください
 backend:
   name: github
-  repo: minamina16/minamina-site
+  repo: YOUR_GITHUB_USERNAME/minamina-site
   branch: main
 
 # 画像のアップロード先フォルダ
@@ -55,18 +55,6 @@ collections:
               - { label: "見出し（一覧に表示）", name: text, widget: string }
               - { label: "本文（クリックで開く詳細・任意）", name: body, widget: text, required: false }
               - { label: "写真（任意）", name: image, widget: image, required: false }
-          - label: "特集の帯バナー（ヘッダー下に表示）"
-            name: feature
-            widget: object
-            fields:
-              - { label: "表示する（オフにすると帯・特集・メニューが全て消えます）", name: enabled, widget: boolean, default: true }
-              - { label: "ラベル（例 キャンペーン情報）", name: pop, widget: string }
-              - { label: "キャンペーン名（例 クラプロックス トラベルセット特集）", name: title, widget: string }
-              - { label: "期間（例 期間：2026.6.1 〜 6.30）", name: period, widget: string, required: false }
-              - { label: "コメント（特集ブロックの見出し下の1行・任意）", name: lead, widget: text, required: false }
-              - { label: "サムネイル写真（小さく表示／任意）", name: image, widget: image, required: false }
-              - { label: "リンクの文字（例 くわしく見る →）", name: button_label, widget: string }
-              - { label: "リンク先（特集ブロックは #feature-block）", name: button_link, widget: string }
           - label: "おすすめ商品"
             name: products
             widget: list
@@ -78,10 +66,6 @@ collections:
               - { label: "商品名", name: name, widget: string }
               - { label: "詳細・味・容量など（任意）", name: detail, widget: string, required: false }
               - { label: "価格（例 ¥1,980）", name: price, widget: string }
-              - { label: "旧価格（セール時の打ち消し線・任意）", name: oldprice, widget: string, required: false }
-              - { label: "写真（任意）", name: image, widget: image, required: false }
-              - { label: "売り切れ表示", name: soldout, widget: boolean, default: false, required: false }
-              - { label: "特集ブロックに表示する", name: featured, widget: boolean, default: false, required: false }
           - label: "インスタグラム"
             name: instagram
             widget: object
