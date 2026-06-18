@@ -139,6 +139,18 @@
       "image": "images/travelset-blueberry.png",
       "soldout": true,
       "featured": true
+    },
+    {
+      "no": "８",
+      "badge": "残りわずか",
+      "category": "美容のケア",
+      "name": "[bao.] 高濃度 炭酸泡洗顔",
+      "detail": "きめ細かい高濃度の炭酸泡が気持ちいい。毛穴の奥まで汚れを浮かせてスッキリ洗い上げます。",
+      "price": "880",
+      "oldprice": "",
+      "image": "/images/[bao.] 高濃度 炭酸泡洗顔.png",
+      "soldout": false,
+      "featured": false
     }
   ],
   "instagram": {
