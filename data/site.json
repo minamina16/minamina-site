@@ -163,6 +163,30 @@
       "image": "/images/毛穴マスク.png",
       "soldout": false,
       "featured": false
+    },
+    {
+      "no": "10",
+      "badge": "",
+      "category": "美容のケア",
+      "name": "SB 毛穴マスク 1枚",
+      "detail": "",
+      "price": "120",
+      "oldprice": "",
+      "image": "/images/毛穴マスク.png",
+      "soldout": false,
+      "featured": false
+    },
+    {
+      "no": "11",
+      "badge": "人気",
+      "category": "美容のケア",
+      "name": "SB メンズマスク 7枚入り",
+      "detail": "",
+      "price": "750",
+      "oldprice": "",
+      "image": "/images/メンズマスク.png",
+      "soldout": false,
+      "featured": false
     }
   ],
   "instagram": {
