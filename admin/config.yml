@@ -2,7 +2,7 @@
 # ★公開時に repo を「あなたのGitHubユーザー名/リポジトリ名」へ差し替えてください
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/minamina-site
+  repo: minamina16/minamina-site
   branch: main
 
 # 画像のアップロード先フォルダ
