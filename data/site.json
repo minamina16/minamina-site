@@ -29,7 +29,7 @@
       "body": "水着の季節に向けたアイテム、強い日差しに負けない涼しげなアイテムを取り揃えました。"
     },
     {
-      "date": "2026.04.28",
+      "date": "2026.04.01",
       "tag": "イベント",
       "tag_type": "event",
       "text": "ゴールデンウィーク特別セール開催のおしらせ（サンプル）",
@@ -62,17 +62,16 @@
   },
   "products": [
     {
-      "no": "1",
       "badge": "キャンペーン",
       "category": "美容ケア",
       "name": "VXリメイククリーム",
       "detail": "500g ／ オープンキャンペーン価格",
       "price": "¥9,990",
       "oldprice": "¥16,500",
-      "image": "images/vx-remake-cream.png"
+      "image": "images/vx-remake-cream.png",
+      "no": "1"
     },
     {
-      "no": "2",
       "badge": "新着",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
@@ -80,10 +79,10 @@
       "price": "¥2,300",
       "oldprice": "",
       "image": "images/travelset-pinkgrapefruit.png",
-      "featured": true
+      "featured": true,
+      "no": "2"
     },
     {
-      "no": "3",
       "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
@@ -92,10 +91,10 @@
       "oldprice": "",
       "image": "images/travelset-orange.png",
       "soldout": true,
-      "featured": true
+      "featured": true,
+      "no": "3"
     },
     {
-      "no": "4",
       "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
@@ -104,10 +103,10 @@
       "oldprice": "",
       "image": "images/travelset-watermelon.png",
       "soldout": true,
-      "featured": true
+      "featured": true,
+      "no": "4"
     },
     {
-      "no": "5",
       "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
@@ -115,10 +114,10 @@
       "price": "¥2,300",
       "oldprice": "",
       "image": "images/travelset-apple.png",
-      "featured": true
+      "featured": true,
+      "no": "5"
     },
     {
-      "no": "6",
       "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
@@ -126,10 +125,10 @@
       "price": "¥2,300",
       "oldprice": "",
       "image": "images/travelset-peach.png",
-      "featured": true
+      "featured": true,
+      "no": "6"
     },
     {
-      "no": "7",
       "badge": "",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
@@ -138,10 +137,10 @@
       "oldprice": "",
       "image": "images/travelset-blueberry.png",
       "soldout": true,
-      "featured": true
+      "featured": true,
+      "no": "7"
     },
     {
-      "no": "８",
       "badge": "残りわずか",
       "category": "美容のケア",
       "name": "[bao.] 高濃度 炭酸泡洗顔",
@@ -150,10 +149,10 @@
       "oldprice": "",
       "image": "/images/[bao.] 高濃度 炭酸泡洗顔.png",
       "soldout": false,
-      "featured": false
+      "featured": false,
+      "no": "８"
     },
     {
-      "no": "９",
       "badge": "売れてます",
       "category": "美容のケア",
       "name": "[Twenties On] UV SUN AIR",
@@ -162,10 +161,10 @@
       "oldprice": "",
       "image": "/images/[Twenties On] UV SUN AIR.png",
       "soldout": false,
-      "featured": false
+      "featured": false,
+      "no": "９"
     },
     {
-      "no": "10",
       "badge": "",
       "category": "美容のケア",
       "name": "SB 毛穴マスク 7枚入り",
@@ -174,10 +173,10 @@
       "oldprice": "",
       "image": "/images/毛穴マスク.png",
       "soldout": false,
-      "featured": false
+      "featured": false,
+      "no": "10"
     },
     {
-      "no": "11",
       "badge": "人気",
       "category": "美容のケア",
       "name": "SB メンズマスク 7枚入り",
@@ -186,7 +185,8 @@
       "oldprice": "",
       "image": "/images/メンズマスク.png",
       "soldout": false,
-      "featured": false
+      "featured": false,
+      "no": "11"
     }
   ],
   "instagram": {
