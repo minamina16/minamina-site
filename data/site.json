@@ -14,6 +14,7 @@
   },
   "news": [
     {
+      "visible": true,
       "date": "2026.06.18",
       "tag": "おしらせ",
       "tag_type": "info",
@@ -22,6 +23,7 @@
       "image": "tenpo.jpg"
     },
     {
+      "visible": true,
       "date": "2026.06.20",
       "tag": "キャンペーン",
       "tag_type": "new",
@@ -29,7 +31,7 @@
       "body": "水着の季節に向けたアイテム、強い日差しに負けない涼しげなアイテムを取り揃えました。"
     },
     {
-      "visible": true,
+      "visible": false,
       "date": "2026.04.01",
       "tag": "イベント",
       "tag_type": "event",
@@ -37,7 +39,7 @@
       "body": "ゴールデンウィーク期間中、対象商品をお得な価格でご用意いたします。期間・対象商品の詳細は、店頭およびインスタグラムでご案内します。（サンプル本文）"
     },
     {
-      "visible": true,
+      "visible": false,
       "date": "2026.04.20",
       "tag": "おしらせ",
       "tag_type": "info",
@@ -45,7 +47,7 @@
       "body": "ご要望の多いセルフ脱毛コースを、近日導入予定です。続報をお待ちください。（サンプル本文）"
     },
     {
-      "visible": true,
+      "visible": false,
       "date": "2026.04.10",
       "tag": "新商品",
       "tag_type": "new",
@@ -54,7 +56,7 @@
     }
   ],
   "feature": {
-    "enabled": true,
+    "enabled": false,
     "pop": "キャンペーン情報",
     "title": "クラプロックス トラベルセット特集",
     "period": "期間：2026.6.1 〜 6.30（なくなり次第終了）",
