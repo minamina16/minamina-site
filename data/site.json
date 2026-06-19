@@ -56,7 +56,7 @@
     }
   ],
   "feature": {
-    "enabled": false,
+    "enabled": true,
     "pop": "キャンペーン情報",
     "title": "クラプロックス トラベルセット特集",
     "period": "期間：2026.6.1 〜 6.30（なくなり次第終了）",
