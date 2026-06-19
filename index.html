@@ -733,11 +733,12 @@
   function get(obj, path){ return path.split('.').reduce(function(o,k){ return (o||{})[k]; }, obj); }
   function tagClass(t){ return t==='new' ? 'nt-new' : t==='event' ? 'nt-event' : 'nt-info'; }
   function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function imgp(s){ s=String(s==null?'':s); return /^https?:/.test(s) ? s : s.replace(/^\/+/,''); }
   function yen(v){ if(v==null||String(v).trim()==='') return ''; var n=Number(String(v).replace(/[^0-9.]/g,'')); return (isNaN(n)||n===0) ? esc(v) : '¥'+n.toLocaleString('ja-JP'); }
   function renderProd(p, num){
     var soldout = !!p.soldout;
     var badge = soldout ? '<span class="badge badge-sold">SOLD OUT</span>' : (p.badge ? '<span class="badge">'+esc(p.badge)+'</span>' : '');
-    var ph = p.image ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'">' : esc(num);
+    var ph = p.image ? '<img src="'+esc(imgp(p.image))+'" alt="'+esc(p.name)+'">' : esc(num);
     return '<div class="prod'+(soldout?' soldout':'')+'"><div class="ph">'+badge+ph+'</div>'+
            '<div class="cat">'+esc(p.category)+'</div>'+
            '<div class="pname">'+esc(p.name)+'</div>'+
@@ -747,7 +748,7 @@
   }
   function renderMini(p){
     var soldout = !!p.soldout;
-    var ph = p.image ? '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'">' : '';
+    var ph = p.image ? '<img src="'+esc(imgp(p.image))+'" alt="'+esc(p.name)+'">' : '';
     return '<div class="fb-card'+(soldout?' soldout':'')+'"><div class="ph">'+ph+'</div>'+
            '<div class="info"><div class="nm">'+esc(p.name)+(soldout?'<span class="sold">SOLD OUT</span>':'')+'</div>'+
            (p.detail ? '<div class="dt">'+esc(p.detail)+'</div>' : '')+
@@ -778,7 +779,7 @@
             if(f.pop!=null && f.pop!=='') document.getElementById('f-pop').textContent=f.pop;
             if(f.title!=null && f.title!=='') document.getElementById('f-title').textContent=f.title;
             var fimg=document.getElementById('f-img');
-            if(f.image!=null && f.image!==''){ fimg.src=f.image; fimg.hidden=false; } else { fimg.hidden=true; }
+            if(f.image!=null && f.image!==''){ fimg.src=imgp(f.image); fimg.hidden=false; } else { fimg.hidden=true; }
             if(f.button_label!=null && f.button_label!=='') document.getElementById('f-btn').textContent=f.button_label;
             if(f.button_link!=null && f.button_link!=='') bar.setAttribute('href', f.button_link);
           }
@@ -808,7 +809,7 @@
                  '<span class="ntag '+tagClass(n.tag_type)+'">'+esc(n.tag)+'</span>'+
                  '<span class="ntext">'+esc(n.text)+'</span><span class="nm-arrow">→</span>'+
                  '<span class="nm-src" hidden>'+esc(n.body||'')+'</span>'+
-                 (n.image ? '<span class="nm-img" hidden>'+esc(n.image)+'</span>' : '')+'</div>';
+                 (n.image ? '<span class="nm-img" hidden>'+esc(imgp(n.image))+'</span>' : '')+'</div>';
         }).join('');
       }
     })
