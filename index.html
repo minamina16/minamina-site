@@ -303,6 +303,15 @@
   .fb-card.soldout .ph img{filter:grayscale(.55);opacity:.55}
   .fb-card.soldout .nm,.fb-card.soldout .dt,.fb-card.soldout .pr{opacity:.6}
 
+  /* VOICES（お客さまの声） */
+  .voices{background:var(--peach-light)}
+  .voices[hidden]{display:none}
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+  .voice-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;box-shadow:0 12px 28px rgba(108,128,52,.06)}
+  .voice-card .v-mark{position:absolute;top:8px;left:18px;font-size:3.2rem;line-height:1;color:var(--coral-soft);font-family:Georgia,serif}
+  .voice-card .v-text{position:relative;font-size:.92rem;color:var(--ink);line-height:1.8;margin:14px 0 14px}
+  .voice-card .v-name{font-size:.82rem;color:var(--coral);font-weight:700;text-align:right}
+
   /* NEWS */
   .news{background:linear-gradient(180deg,#fff,var(--cream))}
   .news-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 30px;box-shadow:0 12px 30px rgba(108,128,52,.05);max-width:900px;margin:0 auto}
@@ -389,6 +398,7 @@
     .svc ul{grid-template-columns:1fr}
     .r-stats{grid-template-columns:1fr 1fr}
     .prod-grid{grid-template-columns:1fr 1fr}
+    .voice-grid{grid-template-columns:1fr}
     .fblock .fb-grid{grid-template-columns:1fr}
     .fbar .thumb{display:none}
     .fbar{margin-top:12px}
@@ -425,7 +435,7 @@
 
 <header>
   <div class="topbar"><div class="wrap topbar-row">
-    <span>📍 JR青梅線 羽村駅東口下車 徒歩1分（皆川総合歯科クリニック隣）</span>
+    <span>📍 JR青梅線 羽村駅東口 徒歩1分（皆川総合歯科クリニック隣）</span>
     <span class="tb-sep">｜</span>
     <span>🕐 平日 10:00–19:00 ／ 土 10:00–17:00（日祝休）</span>
     <span class="tb-sep">｜</span>
@@ -675,6 +685,22 @@
   </div>
 </section>
 
+<!-- VOICES（お客さまの声） -->
+<section class="voices" id="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">VOICE</span>
+      <h2 class="sec-title">お客さまの声</h2>
+      <p class="lead">ご来店いただいたお客さまから寄せられた声をご紹介します。</p>
+    </div>
+    <div class="voice-grid" id="voice-list">
+      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">歯科専売品が身近で買えるのが嬉しいです。スタッフさんのおすすめも参考になりました。</p><div class="v-name">— 40代・女性</div></div>
+      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">セルフエステがお手頃価格で試せて大満足。完全個室なので気兼ねなく通えます。</p><div class="v-name">— 30代・女性</div></div>
+      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">男性でも入りやすい雰囲気でした。オーラルケア用品をまとめて買えて便利です。</p><div class="v-name">— 50代・男性</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ACCESS -->
 <section class="access" id="access">
   <div class="wrap">
@@ -836,6 +862,16 @@
                  '<span class="nm-src" hidden>'+esc(n.body||'')+'</span>'+
                  (n.image ? '<span class="nm-img" hidden>'+esc(imgp(n.image))+'</span>' : '')+'</div>';
         }).join('');
+      }
+      if(Array.isArray(data.voices)){
+        var vv = data.voices.filter(function(v){ return v.visible !== false; });
+        var vsec = document.getElementById('voices');
+        if(vv.length){
+          if(vsec) vsec.hidden=false;
+          document.getElementById('voice-list').innerHTML = vv.map(function(v){
+            return '<div class="voice-card"><div class="v-mark">“</div><p class="v-text">'+fmt(v.text)+'</p>'+(v.name?'<div class="v-name">— '+esc(v.name)+'</div>':'')+'</div>';
+          }).join('');
+        } else if(vsec){ vsec.hidden=true; }
       }
     })
     .catch(function(){ /* 失敗時はHTMLの初期表示のまま */ });
