@@ -245,6 +245,9 @@
 
   /* 本文の強調（管理画面で **囲み** すると色つき太字） */
   .hl{color:var(--accent-deep);font-weight:700;background:linear-gradient(transparent 62%, #FBE7D3 62%)}
+  .ig-ico{width:18px;height:18px;vertical-align:-3px;margin-right:7px}
+  .form-privacy{font-size:.78rem;color:var(--muted);margin:0 0 12px;line-height:1.6}
+  .form-privacy a{color:var(--accent-deep)}
 
   /* HERO INFO（営業時間・住所・電話） */
   .hero-info{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;max-width:720px;position:relative;z-index:2}
@@ -381,6 +384,9 @@
   /* FOOTER */
   footer{background:#46403A;color:#d9d2cb;padding:46px 0}
   footer .ft-brand{color:var(--coral);font-size:1.3rem;font-weight:700;letter-spacing:.06em;margin-bottom:12px}
+  footer .ft-links{margin-top:14px}
+  footer .ft-links a{color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px}
+  footer .ft-copy{margin-top:10px;font-size:.78rem;opacity:.7}
   footer .ft-line{font-size:.82rem;line-height:1.9;opacity:.85}
 
   /* RESPONSIVE */
@@ -533,6 +539,20 @@
 </section>
 </div>
 
+<!-- ▼▼▼ 世界観セクション（不要になったら、この行から「世界観セクションここまで」のコメント行までを削除すれば元に戻ります） ▼▼▼ -->
+<section class="values" id="values">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">私たちの想い</span>
+      <h2 class="sec-title">今よりちょっと素敵な、<br><span class="accent">未来への物語。</span></h2>
+      <p class="lead">小さな選択が、毎日を変えていく。</p>
+    </div>
+    <p class="values-body"><span>私たちが届けたいのは、</span><span>商品そのものではなく、</span><span>その先にある「喜び」と「感動」です。</span><span>お客様一人ひとりの悩みに耳を傾け、</span><span>「使ってよかった」</span><span>「出会えてよかった」。</span><span>そんな小さな感動を一緒に積み重ねることが、</span><span>私たちの願いです。</span></p>
+    <p class="values-body"><span>だからこそ、多くを並べるのではなく、</span><span>自信を持っておすすめできる</span><span>ものだけを厳選しています。</span><br><span>ミナミナは、</span><span>皆さまのキレイと健康に寄り添いながら、</span><br><span>身近なパートナーであり続けたいと</span><span>願っています。</span></p>
+  </div>
+</section>
+<!-- ▲▲▲ 世界観セクションここまで ▲▲▲ -->
+
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="wrap">
@@ -553,19 +573,6 @@
   </div>
 </section>
 
-<!-- ▼▼▼ 世界観セクション（不要になったら、この行から「世界観セクションここまで」のコメント行までを削除すれば元に戻ります） ▼▼▼ -->
-<section class="values" id="values">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">私たちの想い</span>
-      <h2 class="sec-title">今よりちょっと素敵な、<br><span class="accent">未来への物語。</span></h2>
-      <p class="lead">小さな選択が、毎日を変えていく。</p>
-    </div>
-    <p class="values-body"><span>私たちが届けたいのは、</span><span>商品そのものではなく、</span><span>その先にある「喜び」と「感動」です。</span><span>お客様一人ひとりの悩みに耳を傾け、</span><span>「使ってよかった」</span><span>「出会えてよかった」。</span><span>そんな小さな感動を一緒に積み重ねることが、</span><span>私たちの願いです。</span></p>
-    <p class="values-body"><span>だからこそ、多くを並べるのではなく、</span><span>自信を持っておすすめできる</span><span>ものだけを厳選しています。</span><br><span>ミナミナは、</span><span>皆さまのキレイと健康に寄り添いながら、</span><br><span>身近なパートナーであり続けたいと</span><span>願っています。</span></p>
-  </div>
-</section>
-<!-- ▲▲▲ 世界観セクションここまで ▲▲▲ -->
 
 <!-- SERVICES -->
 <section class="services" id="services">
@@ -662,6 +669,22 @@
   </div>
 </section>
 
+<!-- VOICES（お客さまの声） -->
+<section class="voices" id="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">VOICE</span>
+      <h2 class="sec-title">お客さまの声</h2>
+      <p class="lead">ご来店いただいたお客さまから寄せられた声をご紹介します。</p>
+    </div>
+    <div class="voice-grid" id="voice-list">
+      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">歯科専売品が身近で買えるのが嬉しいです。スタッフさんのおすすめも参考になりました。</p><div class="v-name">— 40代・女性</div></div>
+      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">セルフエステがお手頃価格で試せて大満足。完全個室なので気兼ねなく通えます。</p><div class="v-name">— 30代・女性</div></div>
+      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">男性でも入りやすい雰囲気でした。オーラルケア用品をまとめて買えて便利です。</p><div class="v-name">— 50代・男性</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- NEWS -->
 <section class="news" id="news">
   <div class="wrap">
@@ -680,26 +703,11 @@
       <span class="eyebrow">インスタグラム</span>
       <h3 data-cms="instagram.handle">@minamina_beauty_hamura</h3>
       <p data-cms="instagram.text">最新の入荷情報や、スタッフのおすすめを発信しています。</p>
-      <a href="https://www.instagram.com/minamina_beauty_hamura/" id="insta-link" target="_blank" rel="noopener" class="btn btn-primary">📷 インスタグラムをフォロー →</a>
+      <a href="https://www.instagram.com/minamina_beauty_hamura/" id="insta-link" target="_blank" rel="noopener" class="btn btn-primary"><svg class="ig-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84M12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg> インスタグラムをフォロー →</a>
     </div>
   </div>
 </section>
 
-<!-- VOICES（お客さまの声） -->
-<section class="voices" id="voices">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">VOICE</span>
-      <h2 class="sec-title">お客さまの声</h2>
-      <p class="lead">ご来店いただいたお客さまから寄せられた声をご紹介します。</p>
-    </div>
-    <div class="voice-grid" id="voice-list">
-      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">歯科専売品が身近で買えるのが嬉しいです。スタッフさんのおすすめも参考になりました。</p><div class="v-name">— 40代・女性</div></div>
-      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">セルフエステがお手頃価格で試せて大満足。完全個室なので気兼ねなく通えます。</p><div class="v-name">— 30代・女性</div></div>
-      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">男性でも入りやすい雰囲気でした。オーラルケア用品をまとめて買えて便利です。</p><div class="v-name">— 50代・男性</div></div>
-    </div>
-  </div>
-</section>
 
 <!-- ACCESS -->
 <section class="access" id="access">
@@ -716,7 +724,7 @@
           <div class="hr"><span class="d">土曜</span><span class="t" data-cms="store.hours_saturday">10:00 〜 17:00</span></div>
           <div class="hr"><span class="d">日曜・祝日</span><span class="t" data-cms="store.hours_sunday">定休日</span></div>
         </div>
-        <p class="note">※ セルフエステは予約優先制です。お電話または予約フォームよりご予約くださいませ。</p>
+        <p class="note">※ セルフエステは予約優先制です。お電話または予約フォームよりご予約ください。もちろん、空きがあれば当日のご予約も大歓迎です。</p>
       </div>
       <div>
         <h3>ご来店案内</h3>
@@ -762,6 +770,7 @@
         <div class="field"><label>メールアドレス <span class="req">※</span></label><input type="email" name="メールアドレス" required></div>
         <div class="field"><label>お電話番号</label><input type="tel" name="お電話番号"></div>
         <div class="field"><label>お問合せ内容 <span class="req">※</span></label><textarea name="お問合せ内容" required></textarea></div>
+        <p class="form-privacy">送信される前に <a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a> をご確認ください。送信をもって、同意いただいたものとみなします。</p>
         <button type="submit" class="btn btn-primary">送信する</button>
       </form>
     </div>
@@ -770,9 +779,11 @@
 
 <footer>
   <div class="wrap">
-    <div class="ft-brand">minamina ／ ミナミナ ／ 羽村市</div>
-    <div class="ft-line">© 2026 ミナミナ ／ 株式会社エールジャパン</div>
+    <div class="ft-brand">ミナミナ ／ minamina ／ 羽村市</div>
+    <div class="ft-line">株式会社エールジャパン</div>
     <div class="ft-line">📞 <span data-cms="contact.tel">042-578-8439</span> ／ 平日 10:00-19:00 ／ 土曜 10:00-17:00 ／ 日祝休</div>
+    <div class="ft-line ft-links"><a href="privacy.html">プライバシーポリシー</a></div>
+    <div class="ft-line ft-copy">© 2026 株式会社エールジャパン</div>
   </div>
 </footer>
 
