@@ -113,7 +113,11 @@
 
   /* HEADER */
   header{position:sticky;top:0;z-index:50;background:rgba(255,250,246,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .topbar{font-size:.72rem;color:var(--muted);letter-spacing:.06em;padding:7px 0;border-bottom:1px solid var(--line)}
+  .topbar{font-size:.76rem;color:var(--ink-soft);padding:7px 0;border-bottom:1px solid var(--line);background:var(--peach-light)}
+  .topbar-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:3px 12px}
+  .topbar-row .tb-sep{color:var(--line)}
+  .topbar-row .tb-tel{color:var(--accent-deep);font-weight:700;text-decoration:none}
+  .topbar-row .tb-tel:hover{text-decoration:underline}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand .mark{width:46px;height:46px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.2rem;box-shadow:0 8px 18px rgba(108,128,52,.3)}
@@ -121,12 +125,14 @@
   .brand-logo{height:44px;width:auto;display:block}
   .brand .name{font-size:2rem;font-weight:700;letter-spacing:.04em;line-height:1.05;color:var(--ink)}
   .brand .sub{font-size:.74rem;color:var(--muted);letter-spacing:.04em}
-  .menu{display:flex;align-items:center;gap:30px;font-size:.92rem;font-weight:600}
+  .menu{display:flex;align-items:center;gap:30px;font-size:.92rem;font-weight:700}
+  .menu > .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(201,110,39,.34);padding:11px 26px}
+  .menu > .btn-primary:hover{background:var(--accent-deep)}
   .menu a{color:var(--ink-soft);transition:color .15s}
   .menu a:hover{color:var(--coral)}
   .menu .btn{padding:11px 22px}
   .nav-item{position:relative;display:flex;align-items:center}
-  .nav-item .nav-top{cursor:pointer;display:inline-flex;align-items:center;gap:5px;color:var(--ink-soft);user-select:none;-webkit-user-select:none}
+  .nav-item .nav-top{cursor:pointer;display:inline-flex;align-items:center;gap:5px;color:var(--ink);user-select:none;-webkit-user-select:none}
   .nav-item:hover .nav-top{color:var(--coral)}
   .nav-item .dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:8px;min-width:172px;display:none;flex-direction:column;gap:2px;z-index:60}
   .nav-item::after{content:"";position:absolute;top:100%;left:0;right:0;height:16px}
@@ -418,7 +424,13 @@
 <body>
 
 <header>
-  <div class="topbar"><div class="wrap">ミナミナ ／ 羽村市のセレクトショップ ／　とっておきの商品を、ちょうどいい価格で。</div></div>
+  <div class="topbar"><div class="wrap topbar-row">
+    <span>📍 JR青梅線 羽村駅東口下車 徒歩1分</span>
+    <span class="tb-sep">｜</span>
+    <span>🕐 平日 10:00–19:00 ／ 土 10:00–17:00（日祝休）</span>
+    <span class="tb-sep">｜</span>
+    <a href="tel:042-578-8439" class="tb-tel">📞 042-578-8439</a>
+  </div></div>
   <div class="wrap">
     <nav class="nav">
       <a href="#" class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
@@ -506,11 +518,6 @@
       <div class="stat"><div class="num" data-cms="hero.stat1_num">3つ</div><div class="lbl" data-cms="hero.stat1_label">のケアジャンル</div></div>
       <div class="stat"><div class="num" data-cms="hero.stat2_num">100超</div><div class="lbl" data-cms="hero.stat2_label">のセレクト商品</div></div>
       <div class="stat"><div class="num" data-cms="hero.stat3_num">★4.8</div><div class="lbl" data-cms="hero.stat3_label">お客さま評価</div></div>
-    </div>
-    <div class="hero-info">
-      <div class="hi"><span class="hi-ic">🕐</span><div><b>営業時間</b>平日 <span data-cms="store.hours_weekday">10:00〜19:00</span>／土 <span data-cms="store.hours_saturday">10:00〜17:00</span>（日祝休）</div></div>
-      <div class="hi"><span class="hi-ic">📍</span><div><b>所在地</b><span data-cms="store.address">東京都羽村市五ノ神4-14-5 サンシティビル2F</span></div></div>
-      <div class="hi"><span class="hi-ic">📞</span><div><b>お電話</b><a href="tel:042-578-8439"><span data-cms="store.tel">042-578-8439</span></a></div></div>
     </div>
   </div>
 </section>
