@@ -21,7 +21,7 @@ collections:
         file: data/site.json
         format: json
         fields:
-          - label: "ヒーロー（最上部）"
+          - label: "🔝 ヒーロー（最上部）"
             name: hero
             widget: object
             collapsed: true
@@ -34,13 +34,13 @@ collections:
               - { label: "数字2ラベル", name: stat2_label, widget: string }
               - { label: "数字3", name: stat3_num, widget: string }
               - { label: "数字3ラベル", name: stat3_label, widget: string }
-          - label: "はじめまして（お店紹介）"
+          - label: "🌿 選ばれる理由（お店紹介の本文）"
             name: about
             widget: object
             collapsed: true
             fields:
               - { label: "本文", name: body, widget: text }
-          - label: "おしらせ"
+          - label: "📣 おしらせ"
             name: news
             widget: list
             collapsed: true
@@ -48,17 +48,15 @@ collections:
             fields:
               - { label: "サイトに表示する（オフにすると隠せます／削除はしません）", name: visible, widget: boolean, default: true }
               - { label: "日付（カレンダーから選択）", name: date, widget: datetime, date_format: "YYYY.MM.DD", time_format: false, format: "YYYY.MM.DD" }
-              - label: "タグ表示名（選んでください）"
+              - label: "タグ表示名（選んでください／選択肢は「おしらせタグの選択肢」で増やせます）"
                 name: tag
-                widget: select
+                widget: relation
+                collection: site
+                file: newstags
+                value_field: "{{items.*.name}}"
+                display_fields: ["{{items.*.name}}"]
+                search_fields: ["{{items.*.name}}"]
                 required: false
-                options:
-                  - "おしらせ"
-                  - "新商品"
-                  - "イベント"
-                  - "キャンペーン"
-                  - "セール"
-                  - "重要"
               - label: "タグの色"
                 name: tag_type
                 widget: select
@@ -70,7 +68,7 @@ collections:
               - { label: "見出し（一覧に表示）", name: text, widget: string }
               - { label: "本文（クリックで開く詳細・任意）", name: body, widget: text, required: false }
               - { label: "写真（任意）", name: image, widget: image, required: false }
-          - label: "特集の帯バナー（ヘッダー下に表示）"
+          - label: "🎀 特集の帯バナー（ヘッダー下に表示）"
             name: feature
             widget: object
             collapsed: true
@@ -83,7 +81,7 @@ collections:
               - { label: "サムネイル写真（小さく表示／任意）", name: image, widget: image, required: false }
               - { label: "リンクの文字（例 くわしく見る →）", name: button_label, widget: string }
               - { label: "リンク先（特集ブロックは #feature-block）", name: button_link, widget: string }
-          - label: "おすすめ商品"
+          - label: "🛍️ おすすめ商品"
             name: products
             widget: list
             collapsed: true
@@ -99,18 +97,15 @@ collections:
                 display_fields: ["{{items.*.name}}"]
                 search_fields: ["{{items.*.name}}"]
                 required: false
-              - label: "カテゴリ（選んでください）"
+              - label: "カテゴリ（選んでください／選択肢は「カテゴリの選択肢」で増やせます）"
                 name: category
-                widget: select
+                widget: relation
+                collection: site
+                file: categories
+                value_field: "{{items.*.name}}"
+                display_fields: ["{{items.*.name}}"]
+                search_fields: ["{{items.*.name}}"]
                 required: false
-                options:
-                  - "歯のケア"
-                  - "オーラルケア"
-                  - "美容ケア"
-                  - "ボディケア"
-                  - "ヘアケア"
-                  - "UVケア"
-                  - "その他"
               - { label: "商品名", name: name, widget: string }
               - { label: "詳細・味・容量など（任意）", name: detail, widget: string, required: false }
               - { label: "商品説明（みじかい紹介・任意／空ならカードに出ません）", name: description, widget: text, required: false }
@@ -119,7 +114,7 @@ collections:
               - { label: "写真（任意）", name: image, widget: image, required: false }
               - { label: "売り切れ表示", name: soldout, widget: boolean, default: false, required: false }
               - { label: "特集ブロックに表示する", name: featured, widget: boolean, default: false, required: false }
-          - label: "お客さまの声"
+          - label: "💬 お客さまの声"
             name: voices
             widget: list
             collapsed: true
@@ -128,7 +123,7 @@ collections:
               - { label: "サイトに表示する（オフで隠せます／削除はしません）", name: visible, widget: boolean, default: true }
               - { label: "コメント（**で囲むと強調）", name: text, widget: text }
               - { label: "お名前・属性（例 40代・女性／常連のお客さま 等・任意）", name: name, widget: string, required: false }
-          - label: "セルフエステ予約"
+          - label: "💆 セルフエステ予約"
             name: reserve
             widget: object
             collapsed: true
@@ -138,7 +133,7 @@ collections:
               - { label: "説明文（改行OK・**で囲むと強調）", name: desc, widget: text, required: false }
               - { label: "1回あたりの時間（例 20〜40分）", name: time, widget: string, required: false }
               - { label: "通常価格（例 ¥3,990〜）", name: price, widget: string, required: false }
-          - label: "インスタグラム"
+          - label: "📷 インスタグラム"
             name: instagram
             widget: object
             collapsed: true
@@ -146,7 +141,7 @@ collections:
               - { label: "アカウント名（@付き）", name: handle, widget: string }
               - { label: "プロフィールURL", name: url, widget: string }
               - { label: "説明文", name: text, widget: string }
-          - label: "店舗情報"
+          - label: "🏪 店舗情報"
             name: store
             widget: object
             collapsed: true
@@ -160,7 +155,7 @@ collections:
               - { label: "電話番号", name: tel, widget: string }
               - { label: "最寄り駅", name: station, widget: string }
               - { label: "お支払い方法", name: payment, widget: string }
-          - label: "お問合せ（電話）"
+          - label: "☎️ お問合せ（電話）"
             name: contact
             widget: object
             collapsed: true
@@ -168,7 +163,7 @@ collections:
               - { label: "電話番号", name: tel, widget: string }
               - { label: "受付時間", name: tel_hours, widget: string }
       - name: badges
-        label: "バッジの選択肢（ここで増やせます）"
+        label: "🏷️ バッジの選択肢（ここで増やせます）"
         file: data/badges.json
         format: json
         fields:
@@ -178,3 +173,25 @@ collections:
             summary: "{{fields.name}}"
             fields:
               - { label: "バッジ名（例 おすすめ・人気・残りわずか）", name: name, widget: string }
+      - name: newstags
+        label: "🔖 おしらせタグの選択肢（ここで増やせます）"
+        file: data/newstags.json
+        format: json
+        fields:
+          - label: "タグ一覧（行を追加すると、おしらせのタグ候補が増えます）"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "タグ名（例 おしらせ・新商品・イベント）", name: name, widget: string }
+      - name: categories
+        label: "🗂️ カテゴリの選択肢（ここで増やせます）"
+        file: data/categories.json
+        format: json
+        fields:
+          - label: "カテゴリ一覧（行を追加すると、商品のカテゴリ候補が増えます）"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "カテゴリ名（例 歯のケア・美容ケア）", name: name, widget: string }
