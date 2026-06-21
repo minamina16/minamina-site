@@ -228,6 +228,13 @@
       "name": "60代男性（I.N様）"
     }
   ],
+  "reserve": {
+    "campaign_on": true,
+    "campaign": "キャキャキャキャキャンペーン",
+    "desc": "本文ですよ、キャキャキャキャ**キャンペーン**ああああああああああああああああああああああああああああああああキャキャキャキャキャンペーン",
+    "time": "６６分",
+    "price": "660円"
+  },
   "instagram": {
     "handle": "@minamina_beauty_hamura",
     "url": "https://www.instagram.com/minamina_beauty_hamura/",
