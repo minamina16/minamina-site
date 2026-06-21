@@ -68,18 +68,19 @@
   "products": [
     {
       "visible": true,
-      "badge": "おすすめ",
+      "badge": "スタッフ一押し",
       "category": "美容ケア",
       "name": "VXリメイククリーム",
       "detail": "500g ／ オープンキャンペーン価格",
-      "description": "夏までにまだ間に合う！ むくみをとりボディラインを整えます。顔にもボディにもOK。使い心地はひんやり気持ちいい。",
+      "description": "水着の季節にまだ間に合う！ むくみをとりボディラインを整えます。顔にもボディにもOK。使い心地はひんやり気持ちいい。",
       "price": "¥9,990",
       "oldprice": "¥16,500",
       "image": "images/vx-remake-cream.png",
       "no": "1"
     },
     {
-      "badge": "",
+      "visible": true,
+      "badge": "セール",
       "category": "歯のケア",
       "name": "クラプロックス トラベルセット",
       "detail": "ピンクグレープフルーツ＋ベルガモット",
