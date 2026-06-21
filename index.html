@@ -537,9 +537,9 @@
       <a href="#about" class="btn btn-ghost">ミナミナのこと</a>
     </div>
     <div class="stats">
-      <div class="stat"><div class="num" data-cms="hero.stat1_num">3つ</div><div class="lbl" data-cms="hero.stat1_label">のケアジャンル</div></div>
-      <div class="stat"><div class="num" data-cms="hero.stat2_num">100超</div><div class="lbl" data-cms="hero.stat2_label">のセレクト商品</div></div>
-      <div class="stat"><div class="num" data-cms="hero.stat3_num">★4.8</div><div class="lbl" data-cms="hero.stat3_label">お客さま評価</div></div>
+      <div class="stat"><div class="num" data-cms="hero.stat1_num">2つ</div><div class="lbl" data-cms="hero.stat1_label">のケアジャンル</div></div>
+      <div class="stat"><div class="num" data-cms="hero.stat2_num">100</div><div class="lbl" data-cms="hero.stat2_label">のアイテム</div></div>
+      <div class="stat"><div class="num" data-cms="hero.stat3_num">3世代</div><div class="lbl" data-cms="hero.stat3_label">家族で通える</div></div>
     </div>
   </div>
 </section>
@@ -676,18 +676,14 @@
 </section>
 
 <!-- VOICES（お客さまの声） -->
-<section class="voices" id="voices">
+<section class="voices" id="voices" hidden>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">VOICE</span>
       <h2 class="sec-title">お客さまの声</h2>
       <p class="lead">ご来店いただいたお客さまから寄せられた声をご紹介します。</p>
     </div>
-    <div class="voice-grid" id="voice-list">
-      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">歯科専売品が身近で買えるのが嬉しいです。スタッフさんのおすすめも参考になりました。</p><div class="v-name">— 40代・女性</div></div>
-      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">セルフエステがお手頃価格で試せて大満足。完全個室なので気兼ねなく通えます。</p><div class="v-name">— 30代・女性</div></div>
-      <div class="voice-card"><div class="v-mark">“</div><p class="v-text">男性でも入りやすい雰囲気でした。オーラルケア用品をまとめて買えて便利です。</p><div class="v-name">— 50代・男性</div></div>
-    </div>
+    <div class="voice-grid" id="voice-list"></div>
   </div>
 </section>
 
@@ -883,16 +879,14 @@
                  (n.image ? '<span class="nm-img" hidden>'+esc(imgp(n.image))+'</span>' : '')+'</div>';
         }).join('');
       }
-      if(Array.isArray(data.voices)){
-        var vv = data.voices.filter(function(v){ return v.visible !== false; });
-        var vsec = document.getElementById('voices');
-        if(vv.length){
-          if(vsec) vsec.hidden=false;
-          document.getElementById('voice-list').innerHTML = vv.map(function(v){
-            return '<div class="voice-card"><div class="v-mark">“</div><p class="v-text">'+fmt(v.text)+'</p>'+(v.name?'<div class="v-name">— '+esc(v.name)+'</div>':'')+'</div>';
-          }).join('');
-        } else if(vsec){ vsec.hidden=true; }
-      }
+      var vv = Array.isArray(data.voices) ? data.voices.filter(function(v){ return v.visible !== false; }) : [];
+      var vsec = document.getElementById('voices');
+      if(vv.length){
+        if(vsec) vsec.hidden=false;
+        document.getElementById('voice-list').innerHTML = vv.map(function(v){
+          return '<div class="voice-card"><div class="v-mark">“</div><p class="v-text">'+fmt(v.text)+'</p>'+(v.name?'<div class="v-name">— '+esc(v.name)+'</div>':'')+'</div>';
+        }).join('');
+      } else if(vsec){ vsec.hidden=true; }
     })
     .catch(function(){ /* 失敗時はHTMLの初期表示のまま */ });
 
