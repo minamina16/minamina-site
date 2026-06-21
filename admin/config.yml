@@ -24,6 +24,7 @@ collections:
           - label: "ヒーロー（最上部）"
             name: hero
             widget: object
+            collapsed: true
             fields:
               - { label: "キャッチコピー", name: catch, widget: string }
               - { label: "説明文", name: description, widget: text }
@@ -36,11 +37,13 @@ collections:
           - label: "はじめまして（お店紹介）"
             name: about
             widget: object
+            collapsed: true
             fields:
               - { label: "本文", name: body, widget: text }
           - label: "おしらせ"
             name: news
             widget: list
+            collapsed: true
             summary: "{{fields.date}}　{{fields.text}}"
             fields:
               - { label: "サイトに表示する（オフにすると隠せます／削除はしません）", name: visible, widget: boolean, default: true }
@@ -70,6 +73,7 @@ collections:
           - label: "特集の帯バナー（ヘッダー下に表示）"
             name: feature
             widget: object
+            collapsed: true
             fields:
               - { label: "表示する（オフにすると帯・特集・メニューが全て消えます）", name: enabled, widget: boolean, default: true }
               - { label: "ラベル（例 キャンペーン情報）", name: pop, widget: string }
@@ -82,10 +86,19 @@ collections:
           - label: "おすすめ商品"
             name: products
             widget: list
+            collapsed: true
             summary: "{{fields.name}}（{{fields.detail}}）"
             fields:
               - { label: "サイトに表示する（オフにすると一覧から隠せます／削除はしません）", name: visible, widget: boolean, default: true }
-              - { label: "バッジ（自由入力／例 キャンペーン・新着・残りわずか・母の日特別 など。不要なら空欄）", name: badge, widget: string, required: false }
+              - label: "バッジ（選んでください／選択肢は「バッジの選択肢」で増やせます・不要なら空欄）"
+                name: badge
+                widget: relation
+                collection: site
+                file: badges
+                value_field: "{{items.*.name}}"
+                display_fields: ["{{items.*.name}}"]
+                search_fields: ["{{items.*.name}}"]
+                required: false
               - label: "カテゴリ（選んでください）"
                 name: category
                 widget: select
@@ -106,9 +119,29 @@ collections:
               - { label: "写真（任意）", name: image, widget: image, required: false }
               - { label: "売り切れ表示", name: soldout, widget: boolean, default: false, required: false }
               - { label: "特集ブロックに表示する", name: featured, widget: boolean, default: false, required: false }
+          - label: "お客さまの声"
+            name: voices
+            widget: list
+            collapsed: true
+            summary: "{{fields.name}}　{{fields.text}}"
+            fields:
+              - { label: "サイトに表示する（オフで隠せます／削除はしません）", name: visible, widget: boolean, default: true }
+              - { label: "コメント（**で囲むと強調）", name: text, widget: text }
+              - { label: "お名前・属性（例 40代・女性／常連のお客さま 等・任意）", name: name, widget: string, required: false }
+          - label: "セルフエステ予約"
+            name: reserve
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "キャンペーン表示をオンにする", name: campaign_on, widget: boolean, default: true }
+              - { label: "キャンペーンの文字（**で囲むと強調／例 🎉 オープンキャンペーン中 30分 **990円**（6月末まで））", name: campaign, widget: string, required: false }
+              - { label: "説明文（改行OK・**で囲むと強調）", name: desc, widget: text, required: false }
+              - { label: "1回あたりの時間（例 20〜40分）", name: time, widget: string, required: false }
+              - { label: "通常価格（例 ¥3,990〜）", name: price, widget: string, required: false }
           - label: "インスタグラム"
             name: instagram
             widget: object
+            collapsed: true
             fields:
               - { label: "アカウント名（@付き）", name: handle, widget: string }
               - { label: "プロフィールURL", name: url, widget: string }
@@ -116,6 +149,7 @@ collections:
           - label: "店舗情報"
             name: store
             widget: object
+            collapsed: true
             fields:
               - { label: "平日の営業時間", name: hours_weekday, widget: string }
               - { label: "土曜の営業時間", name: hours_saturday, widget: string }
@@ -129,6 +163,18 @@ collections:
           - label: "お問合せ（電話）"
             name: contact
             widget: object
+            collapsed: true
             fields:
               - { label: "電話番号", name: tel, widget: string }
               - { label: "受付時間", name: tel_hours, widget: string }
+      - name: badges
+        label: "バッジの選択肢（ここで増やせます）"
+        file: data/badges.json
+        format: json
+        fields:
+          - label: "バッジ一覧（行を追加すると、商品のバッジ候補が増えます）"
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "バッジ名（例 おすすめ・人気・残りわずか）", name: name, widget: string }
