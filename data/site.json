@@ -67,6 +67,7 @@
   },
   "products": [
     {
+      "visible": true,
       "badge": "おすすめ",
       "category": "美容ケア",
       "name": "VXリメイククリーム",
