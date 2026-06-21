@@ -56,9 +56,9 @@
     }
   ],
   "feature": {
-    "enabled": false,
-    "pop": "キャンペーン情報",
-    "title": "クラプロックス トラベルセット特集",
+    "enabled": true,
+    "pop": "お得なキャンペーン",
+    "title": "クラプロックス 舌ブラシ特集",
     "period": "2026.6.1 〜 6.30（なくなり次第終了）",
     "lead": "旅行やお出かけにちょうどいい、人気のトラベルセット。気になる香りを店頭で選んでください。",
     "image": "images/travelset-pinkgrapefruit.png",
