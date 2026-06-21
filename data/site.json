@@ -56,7 +56,7 @@
     }
   ],
   "feature": {
-    "enabled": true,
+    "enabled": false,
     "pop": "お得なキャンペーン",
     "title": "クラプロックス 舌ブラシ特集",
     "period": "2026.6.1 〜 6.30（なくなり次第終了）",
