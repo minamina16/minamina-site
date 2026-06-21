@@ -206,6 +206,28 @@
       "no": "11"
     }
   ],
+  "voices": [
+    {
+      "visible": true,
+      "text": "歯科専売品が身近で買えるのが嬉しいです。スタッフさんのおすすめも参考になりました。",
+      "name": "40代・女性"
+    },
+    {
+      "visible": true,
+      "text": "セルフエステがお手頃価格で試せて大満足。完全個室なので気兼ねなく通えます。",
+      "name": "30代・女性"
+    },
+    {
+      "visible": true,
+      "text": "男性でも入りやすい雰囲気でした。オーラルケア用品をまとめて買えて便利です。",
+      "name": "— 50代・男性"
+    },
+    {
+      "visible": true,
+      "text": "一回のセルフエステでウエストが２センチサイズダウン。セルフエステってどんなものかよく分からなかったのですが、簡単だし続けてみようと思います。次が楽しみです。",
+      "name": "60代男性（I.N様）"
+    }
+  ],
   "instagram": {
     "handle": "@minamina_beauty_hamura",
     "url": "https://www.instagram.com/minamina_beauty_hamura/",
