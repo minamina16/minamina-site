@@ -246,6 +246,9 @@
   /* 本文の強調（管理画面で **囲み** すると色つき太字） */
   .hl{color:var(--accent-deep);font-weight:700;background:linear-gradient(transparent 62%, #FBE7D3 62%)}
   .ig-ico{width:18px;height:18px;vertical-align:-3px;margin-right:7px}
+  .ig-badge{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:19px;background:radial-gradient(circle at 28% 108%,#fdf497 0%,#fdf497 6%,#fd5949 42%,#d6249f 60%,#285AEB 92%);box-shadow:0 12px 26px rgba(214,36,159,.30);margin:6px auto 16px;transition:transform .2s,box-shadow .2s}
+  .ig-badge:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 32px rgba(214,36,159,.40)}
+  .ig-badge svg{width:35px;height:35px}
   .form-privacy{font-size:.78rem;color:var(--muted);margin:0 0 12px;line-height:1.6}
   .form-privacy a{color:var(--accent-deep)}
 
@@ -704,9 +707,10 @@
     </div>
     <div class="insta">
       <span class="eyebrow">インスタグラム</span>
+      <a class="ig-badge" id="insta-icon" href="https://www.instagram.com/minamina_beauty_hamura/" target="_blank" rel="noopener" aria-label="Instagramを見る"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84M12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
       <h3 data-cms="instagram.handle">@minamina_beauty_hamura</h3>
       <p data-cms="instagram.text">最新の入荷情報や、スタッフのおすすめを発信しています。</p>
-      <a href="https://www.instagram.com/minamina_beauty_hamura/" id="insta-link" target="_blank" rel="noopener" class="btn btn-primary"><svg class="ig-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.12-1.38 5.86 5.86 0 0 0 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.12A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84M12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg> インスタグラムをフォロー →</a>
+      <a href="https://www.instagram.com/minamina_beauty_hamura/" id="insta-link" target="_blank" rel="noopener" class="btn btn-primary">インスタグラムをフォロー →</a>
     </div>
   </div>
 </section>
@@ -831,6 +835,8 @@
       if(data.instagram && data.instagram.url){
         var il = document.getElementById('insta-link');
         if(il) il.href = data.instagram.url;
+        var ii = document.getElementById('insta-icon');
+        if(ii) ii.href = data.instagram.url;
       }
       var visibleProducts = Array.isArray(data.products) ? data.products.filter(function(p){ return p.visible !== false && p.soldout !== true; }) : [];
       var featured = visibleProducts.filter(function(p){ return !!p.featured; });
