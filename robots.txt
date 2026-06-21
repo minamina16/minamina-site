@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://minamina-hamura.netlify.app/sitemap.xml
+Sitemap: https://minamina16.github.io/minamina-site/sitemap.xml

@@ -481,6 +481,7 @@
           <div class="dropdown">
             <a href="#news">おしらせ・イベント</a>
             <a href="#access">ご来店案内</a>
+            <a href="#contact">お問合せ</a>
           </div>
         </div>
         <a href="https://calendar.app.google/mZWrHSxfYKENfCyk8" target="_blank" rel="noopener" class="btn btn-primary">ご予約</a>
@@ -496,6 +497,7 @@
       <a href="#reserve">セルフエステ</a>
       <a href="#news">おしらせ・イベント</a>
       <a href="#access">ご来店案内</a>
+      <a href="#contact">お問合せ</a>
       <a href="https://calendar.app.google/mZWrHSxfYKENfCyk8" target="_blank" rel="noopener">ご予約</a>
     </div>
   </div>
@@ -578,7 +580,7 @@
 <section class="services" id="services">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">アイテム</span>
+      <span class="eyebrow">取り扱いジャンル</span>
       <h2 class="sec-title"><span>毎日のケアを、</span><span>もっと心地よく。</span></h2>
       <p class="lead">ミナミナが厳選した NO.1 アイテムを、ゆっくりとお選びいただけます。</p>
     </div>
@@ -829,7 +831,7 @@
         var il = document.getElementById('insta-link');
         if(il) il.href = data.instagram.url;
       }
-      var visibleProducts = Array.isArray(data.products) ? data.products.filter(function(p){ return p.visible !== false; }) : [];
+      var visibleProducts = Array.isArray(data.products) ? data.products.filter(function(p){ return p.visible !== false && p.soldout !== true; }) : [];
       var featured = visibleProducts.filter(function(p){ return !!p.featured; });
       if(data.feature){
         var f=data.feature, bar=document.getElementById('f-banner');
