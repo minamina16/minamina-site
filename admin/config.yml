@@ -57,14 +57,6 @@ collections:
                 display_fields: ["{{items.*.name}}"]
                 search_fields: ["{{items.*.name}}"]
                 required: false
-              - label: "タグの色"
-                name: tag_type
-                widget: select
-                required: false
-                options:
-                  - { label: "ピンク（おしらせ向き）", value: "info" }
-                  - { label: "黄（新商品向き）", value: "new" }
-                  - { label: "青（イベント向き）", value: "event" }
               - { label: "見出し（一覧に表示）", name: text, widget: string }
               - { label: "本文（クリックで開く詳細・任意）", name: body, widget: text, required: false }
               - { label: "写真（任意）", name: image, widget: image, required: false }
@@ -170,9 +162,22 @@ collections:
           - label: "バッジ一覧（行を追加すると、商品のバッジ候補が増えます）"
             name: items
             widget: list
-            summary: "{{fields.name}}"
+            summary: "{{fields.name}}（{{fields.color}}）"
             fields:
               - { label: "バッジ名（例 おすすめ・人気・残りわずか）", name: name, widget: string }
+              - label: "色（このバッジ共通の色）"
+                name: color
+                widget: select
+                required: false
+                default: "orange"
+                options:
+                  - { label: "みどり", value: "green" }
+                  - { label: "オレンジ", value: "orange" }
+                  - { label: "ピンク", value: "pink" }
+                  - { label: "あか", value: "red" }
+                  - { label: "あお", value: "blue" }
+                  - { label: "きいろ", value: "yellow" }
+                  - { label: "グレー", value: "gray" }
       - name: newstags
         label: "🔖 おしらせタグの選択肢（ここで増やせます）"
         file: data/newstags.json
@@ -181,9 +186,22 @@ collections:
           - label: "タグ一覧（行を追加すると、おしらせのタグ候補が増えます）"
             name: items
             widget: list
-            summary: "{{fields.name}}"
+            summary: "{{fields.name}}（{{fields.color}}）"
             fields:
               - { label: "タグ名（例 おしらせ・新商品・イベント）", name: name, widget: string }
+              - label: "色（このタグ共通の色）"
+                name: color
+                widget: select
+                required: false
+                default: "blue"
+                options:
+                  - { label: "みどり", value: "green" }
+                  - { label: "オレンジ", value: "orange" }
+                  - { label: "ピンク", value: "pink" }
+                  - { label: "あか", value: "red" }
+                  - { label: "あお", value: "blue" }
+                  - { label: "きいろ", value: "yellow" }
+                  - { label: "グレー", value: "gray" }
       - name: categories
         label: "🗂️ カテゴリの選択肢（ここで増やせます）"
         file: data/categories.json
