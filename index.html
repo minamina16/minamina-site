@@ -272,6 +272,13 @@
   .prod .ph:has(img){background:#fff;border:1px solid var(--line)}
   .prod .ph img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;padding:10px;box-sizing:border-box}
   .badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;padding:4px 10px;border-radius:999px}
+  .badge.badge-green{background:#5F8A12}
+  .badge.badge-orange{background:var(--accent)}
+  .badge.badge-pink{background:#D6649F}
+  .badge.badge-red{background:#D64A3F}
+  .badge.badge-blue{background:#3E7BBF}
+  .badge.badge-yellow{background:#D89A00}
+  .badge.badge-gray{background:#8d887d}
   .prod .cat{font-size:.72rem;color:var(--coral);font-weight:700;margin-bottom:3px}
   .prod .pname{font-size:.92rem;margin-bottom:4px;font-weight:600}
   .prod .pdetail{font-size:.74rem;color:var(--muted);margin-bottom:8px;line-height:1.45}
@@ -328,6 +335,13 @@
   .nt-info{background:var(--peach);color:var(--coral-deep)}
   .nt-new{background:#FCF0B0;color:#8A7510}
   .nt-event{background:#FBE3CD;color:#B86A24}
+  .nt-green{background:#E6F0CF;color:#4A6B12}
+  .nt-orange{background:#FBE3CD;color:#B86A24}
+  .nt-pink{background:#FBD9EA;color:#B23A78}
+  .nt-red{background:#FAD9D6;color:#C0392B}
+  .nt-blue{background:#D9E8F5;color:#2E5E8F}
+  .nt-yellow{background:#FCF0B0;color:#8A7510}
+  .nt-gray{background:#E7E2D2;color:#6A6555}
   .news-row .ntext{font-size:.92rem;color:var(--ink)}
   .news-row{cursor:pointer}
   .news-row:hover .ntext{color:var(--coral)}
@@ -531,17 +545,11 @@
   <div class="blob b3"></div>
   <div class="blob b4"></div>
   <div class="wrap">
-    <h1>いいものを、<br><span class="accent">うれしい価格</span>で。</h1>
-    <div class="catch" data-cms="hero.catch">毎日のキレイ、わたしらしく。</div>
+    <h1>いいものを、<br><span class="accent">お値打ち価格</span>で。</h1>
     <p class="desc" data-cms="hero.description">ミナミナは、「歯科医院のとなり」で、毎日のキレイと健康を応援するセレクトショップです。<br>健康やキレイに興味はあるけど……<br>「何を選べばいいかわからない」<br>「本当にいいものだけを使いたい」<br>そんなあなたに、毎日を少し心地よくするアイテムを、手に取りやすい価格でお届けしています。</p>
     <div class="cta">
       <a href="https://calendar.app.google/mZWrHSxfYKENfCyk8" target="_blank" rel="noopener" class="btn btn-primary">セルフエステを予約する →</a>
       <a href="#about" class="btn btn-ghost">ミナミナのこと</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="num" data-cms="hero.stat1_num">2つ</div><div class="lbl" data-cms="hero.stat1_label">のケアジャンル</div></div>
-      <div class="stat"><div class="num" data-cms="hero.stat2_num">100</div><div class="lbl" data-cms="hero.stat2_label">のアイテム</div></div>
-      <div class="stat"><div class="num" data-cms="hero.stat3_num">3世代</div><div class="lbl" data-cms="hero.stat3_label">家族で通える</div></div>
     </div>
   </div>
 </section>
@@ -797,13 +805,17 @@
 (function(){
   function get(obj, path){ return path.split('.').reduce(function(o,k){ return (o||{})[k]; }, obj); }
   function tagClass(t){ return t==='new' ? 'nt-new' : t==='event' ? 'nt-event' : 'nt-info'; }
+  var badgeColors={}, tagColors={};
+  var COLORKEYS={green:1,orange:1,pink:1,red:1,blue:1,yellow:1,gray:1};
+  function badgeClass(name){ var c=badgeColors[name]; return COLORKEYS[c]?('badge-'+c):'badge-orange'; }
+  function ntagClass(name){ var c=tagColors[name]; return COLORKEYS[c]?('nt-'+c):'nt-info'; }
   function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function imgp(s){ s=String(s==null?'':s); return /^https?:/.test(s) ? s : s.replace(/^\/+/,''); }
   function fmt(s){ return esc(s).replace(/\*\*([^*\n]+)\*\*/g,'<span class="hl">$1</span>').replace(/\n/g,'<br>'); }
   function yen(v){ if(v==null||String(v).trim()==='') return ''; var n=Number(String(v).replace(/[^0-9.]/g,'')); return (isNaN(n)||n===0) ? esc(v) : '¥'+n.toLocaleString('ja-JP'); }
   function renderProd(p, num){
     var soldout = !!p.soldout;
-    var badge = soldout ? '<span class="badge badge-sold">SOLD OUT</span>' : (p.badge ? '<span class="badge">'+esc(p.badge)+'</span>' : '');
+    var badge = soldout ? '<span class="badge badge-sold">SOLD OUT</span>' : (p.badge ? '<span class="badge '+badgeClass(p.badge)+'">'+esc(p.badge)+'</span>' : '');
     var ph = p.image ? '<img src="'+esc(imgp(p.image))+'" alt="'+esc(p.name)+'">' : esc(num);
     return '<div class="prod'+(soldout?' soldout':'')+'"><div class="ph">'+badge+ph+'</div>'+
            '<div class="cat">'+esc(p.category)+'</div>'+
@@ -821,9 +833,12 @@
            '<div class="pr">'+(p.oldprice ? '<span class="oldprice">'+yen(p.oldprice)+'</span> ' : '')+yen(p.price)+' <small>(税込)</small></div></div></div>';
   }
 
-  fetch('data/site.json', {cache:'no-store'})
-    .then(function(r){ return r.ok ? r.json() : null; })
-    .then(function(data){
+  function loadJSON(u){ return fetch(u, {cache:'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }
+  Promise.all([ loadJSON('data/site.json'), loadJSON('data/badges.json'), loadJSON('data/newstags.json') ])
+    .then(function(res){
+      var data=res[0], bd=res[1], nt=res[2];
+      if(bd && Array.isArray(bd.items)) bd.items.forEach(function(it){ if(it && it.name) badgeColors[it.name]=it.color||''; });
+      if(nt && Array.isArray(nt.items)) nt.items.forEach(function(it){ if(it && it.name) tagColors[it.name]=it.color||''; });
       if(!data) return; // 読み込めなければHTMLの初期表示のまま
       document.querySelectorAll('[data-cms]').forEach(function(el){
         var v = get(data, el.getAttribute('data-cms'));
@@ -875,7 +890,7 @@
       if(Array.isArray(data.news)){
         document.getElementById('news-list').innerHTML = data.news.filter(function(n){ return n.visible !== false; }).sort(function(a,b){ return String(b.date||'').localeCompare(String(a.date||'')); }).map(function(n){
           return '<div class="news-row"><span class="date">'+esc(n.date)+'</span>'+
-                 '<span class="ntag '+tagClass(n.tag_type)+'">'+esc(n.tag)+'</span>'+
+                 '<span class="ntag '+ntagClass(n.tag)+'">'+esc(n.tag)+'</span>'+
                  '<span class="ntext">'+esc(n.text)+'</span><span class="nm-arrow">→</span>'+
                  '<span class="nm-src" hidden>'+esc(n.body||'')+'</span>'+
                  (n.image ? '<span class="nm-img" hidden>'+esc(imgp(n.image))+'</span>' : '')+'</div>';
