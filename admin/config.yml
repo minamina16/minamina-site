@@ -26,14 +26,8 @@ collections:
             widget: object
             collapsed: true
             fields:
-              - { label: "キャッチコピー", name: catch, widget: string }
-              - { label: "説明文", name: description, widget: text }
-              - { label: "数字1", name: stat1_num, widget: string }
-              - { label: "数字1ラベル", name: stat1_label, widget: string }
-              - { label: "数字2", name: stat2_num, widget: string }
-              - { label: "数字2ラベル", name: stat2_label, widget: string }
-              - { label: "数字3", name: stat3_num, widget: string }
-              - { label: "数字3ラベル", name: stat3_label, widget: string }
+              - { label: "キャッチコピー（任意・空欄OK）", name: catch, widget: string, required: false }
+              - { label: "説明文（任意・空欄OK）", name: description, widget: text, required: false }
           - label: "🌿 選ばれる理由（お店紹介の本文）"
             name: about
             widget: object
